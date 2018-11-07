@@ -1,4 +1,6 @@
-<?php ?>
+<?php
+use yii\helpers\Url;
+?>
 <!DOCTYPE html>
 <!--[if IE 9 ]><html class="ie ie9 no-js" lang="en"><![endif]-->
 <!--[if gt IE 9 | !IE]><!-->
@@ -12,9 +14,9 @@
   <meta name="keywords" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="icon" href="assetsimg/favicon.ico">
-  <link rel='stylesheet' href='assets/css/bootstrap.min.css'>
+  <link rel="apple-touch-icon" href="<?= Yii::getAlias('@frontend').'/web/theme-assets/assets/img/apple-touch-icon.png'?>">
+  <link rel="icon" href="assets/img/favicon.ico">
+  <link rel='stylesheet' href="<?= Yii::getAlias('@frontend').'/web/theme-assets/assets/css/bootstrap.min.css'?>">
   <link rel='stylesheet' href='assets/css/vendor.css'>
   <link rel='stylesheet' href='assets/css/style.css'>
   <link rel='stylesheet' href='assets/css/custom.css'>
