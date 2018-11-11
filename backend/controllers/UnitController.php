@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Usergroup;
-use backend\models\UsergroupSearch;
+use backend\models\Unit;
+use backend\models\UnitSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * UsergroupController implements the CRUD actions for Usergroup model.
+ * UnitController implements the CRUD actions for Unit model.
  */
-class UsergroupController extends Controller
+class UnitController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class UsergroupController extends Controller
     }
 
     /**
-     * Lists all Usergroup models.
+     * Lists all Unit models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new UsergroupSearch();
+        $searchModel = new UnitSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class UsergroupController extends Controller
     }
 
     /**
-     * Displays a single Usergroup model.
+     * Displays a single Unit model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class UsergroupController extends Controller
     }
 
     /**
-     * Creates a new Usergroup model.
+     * Creates a new Unit model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Usergroup();
+        $model = new Unit();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class UsergroupController extends Controller
     }
 
     /**
-     * Updates an existing Usergroup model.
+     * Updates an existing Unit model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class UsergroupController extends Controller
     }
 
     /**
-     * Deletes an existing Usergroup model.
+     * Deletes an existing Unit model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class UsergroupController extends Controller
     }
 
     /**
-     * Finds the Usergroup model based on its primary key value.
+     * Finds the Unit model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Usergroup the loaded model
+     * @return Unit the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Usergroup::findOne($id)) !== null) {
+        if (($model = Unit::findOne($id)) !== null) {
             return $model;
         }
 
