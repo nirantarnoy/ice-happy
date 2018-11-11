@@ -49,21 +49,7 @@ class Customer extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-<<<<<<< HEAD
-            'id' => 'ID',
-            'code' => 'Code',
-            'first_name' => 'First Name',
-            'last_name' => 'Last Name',
-            'card_id' => 'Card ID',
-            'customer_group_id' => 'Customer Group ID',
-            'customer_type_id' => 'Customer Type ID',
-            'description' => 'Description',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'created_by' => 'Created By',
-            'updated_by' => 'Updated By',
-=======
+
             'id' => Yii::t('app', 'ID'),
             'code' => Yii::t('app', 'Code'),
             'first_name' => Yii::t('app', 'First Name'),
@@ -77,7 +63,6 @@ class Customer extends \yii\db\ActiveRecord
             'updated_at' => Yii::t('app', 'Updated At'),
             'created_by' => Yii::t('app', 'Created By'),
             'updated_by' => Yii::t('app', 'Updated By'),
->>>>>>> 81ad64ed3cc8a42e5d11015392340bfed056a9b5
         ];
     }
 }
