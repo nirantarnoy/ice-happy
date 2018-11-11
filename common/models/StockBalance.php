@@ -5,25 +5,27 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "unit".
+ * This is the model class for table "stock_balance".
  *
  * @property int $id
- * @property string $name
- * @property string $description
+ * @property int $product_id
+ * @property int $warehouse_id
+ * @property int $loc_id
+ * @property double $qty
  * @property int $status
  * @property int $created_at
  * @property int $updated_at
  * @property int $created_by
  * @property int $updated_by
  */
-class Unit extends \yii\db\ActiveRecord
+class StockBalance extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'unit';
+        return 'stock_balance';
     }
 
     /**
@@ -32,8 +34,8 @@ class Unit extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['status', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['name', 'description'], 'string', 'max' => 255],
+            [['product_id', 'warehouse_id', 'loc_id', 'status', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
+            [['qty'], 'number'],
         ];
     }
 
@@ -43,25 +45,16 @@ class Unit extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-<<<<<<< HEAD
-            'id' => 'ID',
-            'name' => 'Name',
-            'description' => 'Description',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'created_by' => 'Created By',
-            'updated_by' => 'Updated By',
-=======
             'id' => Yii::t('app', 'ID'),
-            'name' => Yii::t('app', 'Name'),
-            'description' => Yii::t('app', 'Description'),
+            'product_id' => Yii::t('app', 'Product ID'),
+            'warehouse_id' => Yii::t('app', 'Warehouse ID'),
+            'loc_id' => Yii::t('app', 'Loc ID'),
+            'qty' => Yii::t('app', 'Qty'),
             'status' => Yii::t('app', 'Status'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
             'created_by' => Yii::t('app', 'Created By'),
             'updated_by' => Yii::t('app', 'Updated By'),
->>>>>>> 81ad64ed3cc8a42e5d11015392340bfed056a9b5
         ];
     }
 }

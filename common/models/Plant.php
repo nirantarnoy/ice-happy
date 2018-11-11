@@ -53,6 +53,7 @@ class Plant extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
+<<<<<<< HEAD
             'id' => 'ID',
             'name' => 'Name',
             'short_name' => 'Short Name',
@@ -71,6 +72,26 @@ class Plant extends \yii\db\ActiveRecord
             'updated_at' => 'Updated At',
             'created_by' => 'Created By',
             'updated_by' => 'Updated By',
+=======
+            'id' => Yii::t('app', 'ID'),
+            'name' => Yii::t('app', 'Name'),
+            'short_name' => Yii::t('app', 'Short Name'),
+            'eng_name' => Yii::t('app', 'Eng Name'),
+            'description' => Yii::t('app', 'Description'),
+            'tax_id' => Yii::t('app', 'Tax ID'),
+            'email' => Yii::t('app', 'Email'),
+            'mobile' => Yii::t('app', 'Mobile'),
+            'phone' => Yii::t('app', 'Phone'),
+            'website' => Yii::t('app', 'Website'),
+            'facebook' => Yii::t('app', 'Facebook'),
+            'line' => Yii::t('app', 'Line'),
+            'logo' => Yii::t('app', 'Logo'),
+            'status' => Yii::t('app', 'Status'),
+            'created_at' => Yii::t('app', 'Created At'),
+            'updated_at' => Yii::t('app', 'Updated At'),
+            'created_by' => Yii::t('app', 'Created By'),
+            'updated_by' => Yii::t('app', 'Updated By'),
+>>>>>>> 81ad64ed3cc8a42e5d11015392340bfed056a9b5
         ];
     }
 }
