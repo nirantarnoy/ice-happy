@@ -15,6 +15,9 @@ use kartik\file\FileInput;
 ?>
 
 <div class="product-form">
+    <div class="card">
+        <div class="card-body">
+
 <?php $form = ActiveForm::begin(['options'=>['class'=>'form-horizontal form-label-left','enctype'=>'multipart/form-data']]); ?>
     <div class="panel panel-headline">
         <div class="panel-heading">
@@ -58,13 +61,6 @@ use kartik\file\FileInput;
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <?= $form->field($model, 'status')->widget(Switchery::className(),['options'=>['label'=>'','class'=>'form-control']])->label(false) ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">จำนวนสินค้า <span class="required"></span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <?= $form->field($model, 'all_qty')->textInput(['maxlength' => true,'class'=>'form-control','disabled'=>'disabled','value'=>$model->all_qty!=""?$model->all_qty:0])->label(false) ?>
                                         </div>
                                     </div>
 
@@ -151,89 +147,8 @@ use kartik\file\FileInput;
                                     ?>
                                 </div>
                             </div>
-                           <hr />
-                           <p><h3>กำหนดราคาตามผู้ขาย</h3></p>
-                          <div class="row">
-                              <div class="col-lg-8">
-                                  <table class="table table-striped table-list">
-                                      <thead>
-                                         <tr>
-                                             <th>#</th>
-                                             <th>ผู้ขาย</th>
-                                             <th>ราคา</th>
-                                             <th></th>
-                                         </tr>
-                                      </thead>
-                                      <tbody>
-                                      <?php if($model->isNewRecord):?>
-                                        <tr>
 
-                                            <td><span class="line-no"></span></td>
-                                            <td>
-                                                <div class="input-group">
-                                                    <input type="text" class="vendor_code" style="border: none;padding: 5px 5px 5px 5px;width: 100%;background:transparent;text-align: left" name="vendor_code[]"  placeholder="ค้นหารหัส...">
-                                                    <input type="hidden" class="vendor_id" name="vendor_id[]" value="">
-                                                    <span class="input-group-btn">
-                                    <div class="btn btn-default btn-search-item" style="border: none;background: transparent;"  onclick="findItem($(this));"><i class="fa fa-search-plus"></i></div>
-                                </span>
-                                                </div>
-                                            </td>
-                                            <td><input type="text" class="form-control line-price" name="line_price[]" value="0"></td>
-                                            <td>
-                                                <i class="fa fa-minus-circle text-danger remove-line" style="cursor: pointer;vertical-align: middle;" onclick="removeline($(this));"></i>
-                                                <i class="fa fa-plus-circle text-success add-line" style="cursor: pointer;vertical-align: middle;" onclick="addLine($(this));" ></i>
-                                            </td>
-                                        </tr>
-                                      <?php else:?>
-                                      <?php $num = 0;?>
-                                         <?php if(count($modelprice)>0):?>
-                                         <?php foreach($modelprice as $value):?>
-                                              <?php $num = $num +1;?>
-                                          <tr>
 
-                                              <td><span class="line-no"><?=$num?></span></td>
-                                              <td>
-                                                  <div class="input-group">
-                                                      <input type="text" class="vendor_code" style="border: none;padding: 5px 5px 5px 5px;width: 100%;background:transparent;text-align: left" name="vendor_code[]" value="<?=\backend\models\Suplier::findName($value->vendor_id)?>"  placeholder="ค้นหารหัส...">
-                                                      <input type="hidden" class="vendor_id" name="vendor_id[]" value="<?=$value->vendor_id?>">
-                                                      <span class="input-group-btn">
-                                    <div class="btn btn-default btn-search-item" style="border: none;background: transparent;"  onclick="findItem($(this));"><i class="fa fa-search-plus"></i></div>
-                                </span>
-                                                  </div>
-                                              </td>
-                                              <td><input type="text" class="form-control line-price" name="line_price[]" value="<?=$value->price?>"></td>
-                                              <td>
-                                                  <i class="fa fa-minus-circle text-danger remove-line" style="cursor: pointer;vertical-align: middle;" onclick="removeline($(this));"></i>
-                                                  <i class="fa fa-plus-circle text-success add-line" style="cursor: pointer;vertical-align: middle;" onclick="addLine($(this));" ></i>
-                                              </td>
-                                          </tr>
-                                         <?php endforeach;?>
-
-                                         <?php else:?>
-                                             <tr>
-
-                                                 <td><span class="line-no"></span></td>
-                                                 <td>
-                                                     <div class="input-group">
-                                                         <input type="text" class="vendor_code" style="border: none;padding: 5px 5px 5px 5px;width: 100%;background:transparent;text-align: left" name="vendor_code[]"  placeholder="ค้นหารหัส...">
-                                                         <input type="hidden" class="vendor_id" name="vendor_id[]" value="">
-                                                         <span class="input-group-btn">
-                                    <div class="btn btn-default btn-search-item" style="border: none;background: transparent;"  onclick="findItem($(this));"><i class="fa fa-search-plus"></i></div>
-                                </span>
-                                                     </div>
-                                                 </td>
-                                                 <td><input type="text" class="form-control line-price" name="line_price[]" value="0"></td>
-                                                 <td>
-                                                     <i class="fa fa-minus-circle text-danger remove-line" style="cursor: pointer;vertical-align: middle;" onclick="removeline($(this));"></i>
-                                                     <i class="fa fa-plus-circle text-success add-line" style="cursor: pointer;vertical-align: middle;" onclick="addLine($(this));" ></i>
-                                                 </td>
-                                             </tr>
-                                         <?php endif;?>
-                                      <?php endif;?>
-                                      </tbody>
-                                  </table>
-                              </div>
-                          </div>
                       <hr />
 
                         <div class="col-md-8 col-md-offset-4">
@@ -249,6 +164,8 @@ use kartik\file\FileInput;
     <?php ActiveForm::end(); ?>
 
 
+        </div>
+    </div>
 
 </div>
 

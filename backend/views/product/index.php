@@ -130,29 +130,29 @@ table.table-vendor td{
 
                                 <input type="text" class="form-control search_all" name="search_all" value="<?=$searchname;?>" placeholder="ค้นหารหัส,ชื่อ">
                                 <?php
-                                echo MultiSelect::widget([
-                                    'id'=>"product_groups",
-                                    'name'=>'product_groups[]',
-                                    'model'=>null,
-                                    "options" => ['multiple'=>"multiple",
-                                        'onchange'=>''], // for the actual multiselect
-                                    // 'data' => count($groupall)==0?['ไม่มีข้อมูล']:ArrayHelper::map($groupall,'id','name'), // data as array
-                                    'data' => ['id'=>0,'name'=>'niran'] , // data as array
-                                    'value' => $group, // if preselected
-                                    "clientOptions" =>
-                                        [
-                                            "includeSelectAllOption" => true,
-                                            'numberDisplayed' => 5,
-                                            'nonSelectedText'=>'กลุ่มสินค้า',
-                                            // 'enableFiltering' => true,
-                                            //'enableCaseInsensitiveFiltering'=>true,
-                                        ],
-                                ]); ?>
+//                                echo MultiSelect::widget([
+//                                    'id'=>"product_groups",
+//                                    'name'=>'product_groups[]',
+//                                    'model'=>null,
+//                                    "options" => ['multiple'=>"multiple",
+//                                        'onchange'=>''], // for the actual multiselect
+//                                    // 'data' => count($groupall)==0?['ไม่มีข้อมูล']:ArrayHelper::map($groupall,'id','name'), // data as array
+//                                    'data' => ['id'=>0,'name'=>'niran'] , // data as array
+//                                    'value' => $group, // if preselected
+//                                    "clientOptions" =>
+//                                        [
+//                                            "includeSelectAllOption" => true,
+//                                            'numberDisplayed' => 5,
+//                                            'nonSelectedText'=>'กลุ่มสินค้า',
+//                                            // 'enableFiltering' => true,
+//                                            //'enableCaseInsensitiveFiltering'=>true,
+//                                        ],
+//                                ]); ?>
 
                                 <input type="hidden" name="perpage" value="<?=$perpage?>">
                                 <div class="btn-group">
                                     <input type="submit" class="btn btn-info btn-search" value="ค้นหา" />
-                                    <div class="btn btn-default btn-reset"> รีเซ็ต</div>
+                                    <div class="btn btn-secondary btn-reset"> รีเซ็ต</div>
                                 </div>
 
 
