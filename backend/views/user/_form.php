@@ -9,15 +9,21 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="user-form">
+    <div class="card">
+        <div class="card-body">
+            <?php $form = ActiveForm::begin(); ?>
 
-    <?php $form = ActiveForm::begin(); ?>
+            <?= $form->field($model, 'username')->textInput() ?>
+            <?= $form->field($model, 'group_id')->textInput() ?>
+            <?= $form->field($model, 'status')->textInput() ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+            <div class="form-group">
+                <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+            </div>
 
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+            <?php ActiveForm::end(); ?>
+        </div>
     </div>
 
-    <?php ActiveForm::end(); ?>
 
 </div>
