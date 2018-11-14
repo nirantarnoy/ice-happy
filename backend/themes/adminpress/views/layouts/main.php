@@ -433,22 +433,21 @@ AppAsset::register($this);
 <!--                <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>-->
 <!--            </div>-->
 <!--        </div>-->
+
         <?php $this->beginBody() ?>
-<!--        <div class="row page-titles">-->
-<!--            <div class="col-md-5 align-self-center">-->
-<!--                <h3 class="text-themecolor">Dashboard</h3>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="row page-titles">
+            <?php
+            echo Breadcrumbs::widget([
+                'options' => ['class'=>'breadcrumb','style'=>'margin-top: -10px;'],
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+
+            ]);
+            ?>
+        </div>
         <div class="main-content">
             <div class="container-fluid">
 
-                <?php
-                echo Breadcrumbs::widget([
-                    'options' => ['class'=>'breadcrumb','style'=>'margin-top: -10px;'],
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 
-                ]);
-                ?>
                 <?= $content ?>
             </div>
         </div>

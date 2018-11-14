@@ -72,11 +72,10 @@ use yii\helpers\Url;
                         <td style="width: 5%;padding-top: 15px;" class="line-no"></td>
                         <td style="width: 30%">
                             <div class="input-group">
-                                <input type="text" onchange="productChange($(this))" class="product_code" style="border: none;padding: 5px 5px 5px 5px;width: 100%;background:transparent;text-align: left" name="product_code[]"  placeholder="ค้นหารหัส...">
-                                <input type="hidden" class="product_id" name="product_id[]" value="">
-                                <span class="input-group-btn">
-                                    <div class="btn btn-default btn-search-item" style="border: none;background: transparent;"  onclick="findItem($(this));"><i class="fa fa-search-plus"></i></div>
-                                </span>
+                                <input type="text" class="form-control" placeholder="รหัสสินค้า" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                                </div>
                             </div>
                         </td>
                         <td>
@@ -192,6 +191,7 @@ $js=<<<JS
       var currow = -1;
       linenum();
     $(".btn-add-line").click(function() {
+        alert();
        var tr = $(".table-item tbody tr:first");
        if(tr.closest("tr").find(".product_code").val()== "")return;
        var clone = tr.clone();
