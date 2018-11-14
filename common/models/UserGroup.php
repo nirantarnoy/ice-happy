@@ -43,14 +43,14 @@ class UserGroup extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'description' => 'Description',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'created_by' => 'Created By',
-            'updated_by' => 'Updated By',
+            'id' => Yii::t('app', 'ID'),
+            'name' => Yii::t('app', 'ชื่อ'),
+            'description' => Yii::t('app', 'รายละเอียด'),
+            'status' => Yii::t('app', 'สถานะ'),
+            'created_at' => Yii::t('app', 'สร้างเมื่อ'),
+            'updated_at' => Yii::t('app', 'แก้ไขเมื่อ'),
+            'created_by' => Yii::t('app', 'สร้างโดย'),
+            'updated_by' => Yii::t('app', 'แก้ไขโดย'),
         ];
     }
 }

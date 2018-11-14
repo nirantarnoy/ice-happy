@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel backend\models\PlantSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Plants';
+$this->title = 'ข้อมูลบริษัท';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="plant-index">

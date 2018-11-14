@@ -49,20 +49,20 @@ class Customer extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-
             'id' => Yii::t('app', 'ID'),
-            'code' => Yii::t('app', 'Code'),
-            'first_name' => Yii::t('app', 'First Name'),
-            'last_name' => Yii::t('app', 'Last Name'),
-            'card_id' => Yii::t('app', 'Card ID'),
-            'customer_group_id' => Yii::t('app', 'Customer Group ID'),
+            'code' => Yii::t('app', 'รหัสลูกค้า'),
+            'first_name' => Yii::t('app', 'ชื่อ'),
+            'last_name' => Yii::t('app', 'นามสกุล'),
+            'card_id' => Yii::t('app', 'เลขที่บัตรประชาชน'),
+            'customer_group_id' => Yii::t('app', 'กลุ่มลูกค้า'),
             'customer_type_id' => Yii::t('app', 'Customer Type ID'),
-            'description' => Yii::t('app', 'Description'),
-            'status' => Yii::t('app', 'Status'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'updated_at' => Yii::t('app', 'Updated At'),
-            'created_by' => Yii::t('app', 'Created By'),
-            'updated_by' => Yii::t('app', 'Updated By'),
+            'description' => Yii::t('app', 'รายละเอียด'),
+            'phone' => Yii::t('app', 'โทรศัพท์'),
+            'status' => Yii::t('app', 'สถานะ'),
+            'created_at' => Yii::t('app', 'สร้างเมื่อ'),
+            'updated_at' => Yii::t('app', 'แก้ไขเมื่อ'),
+            'created_by' => Yii::t('app', 'สร้างโดย'),
+            'updated_by' => Yii::t('app', 'แก้ไขโดย'),
         ];
     }
 }
