@@ -394,6 +394,7 @@ AppAsset::register($this);
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="index.php?r=productcat/index">กลุ่มสินค้า</a></li>
                             <li><a href="index.php?r=product/index">สินค้า</a></li>
+                            <li><a href="index.php?r=unit/index">หน่วยนับ</a></li>
                         </ul>
                     </li><li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-shopping"></i><span class="hide-menu">ข้อมูลขาย</span></a>
                         <ul aria-expanded="false" class="collapse">

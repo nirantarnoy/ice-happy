@@ -7,12 +7,14 @@ use yii\widgets\Pjax;
 /* @var $searchModel backend\models\UnitSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Units';
+$this->title = 'หน่วยนับ';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="unit-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
+    <div class="card">
+        <div class="card-body">
     <?php Pjax::begin(); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
@@ -26,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+          //  'id',
             'name',
             'description',
             'status',
@@ -39,4 +41,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
     <?php Pjax::end(); ?>
+        </div>
+    </div>
 </div>

@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Unit */
 
-$this->title = 'Create Unit';
-$this->params['breadcrumbs'][] = ['label' => 'Units', 'url' => ['index']];
+$this->title = 'สร้างหน่วยนับ';
+$this->params['breadcrumbs'][] = ['label' => 'หน่วยนับ', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="unit-create">
