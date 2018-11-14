@@ -11,7 +11,7 @@ use kartik\file\FileInput;
 /* @var $model backend\models\Product */
 /* @var $form yii\widgets\ActiveForm */
 
-$vendorlist = \backend\models\Suplier::find()->where(['status'=>1])->all();
+//$vendorlist = \backend\models\Suplier::find()->where(['status'=>1])->all();
 ?>
 
 <div class="product-form">
@@ -109,9 +109,9 @@ $vendorlist = \backend\models\Suplier::find()->where(['status'=>1])->all();
                                             </div>
                                           </div>
 
-                                           
+
                                  </div>
-                                
+
                             </div>
 
                            <hr />
@@ -251,50 +251,7 @@ $vendorlist = \backend\models\Suplier::find()->where(['status'=>1])->all();
 
 
 </div>
-<div id="findModal" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-md">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"><i class="fa fa-search-plus text-primary"></i> <h3><b>ค้นหารหัสผู้ขาย</b></h3></h4>
-            </div>
-            <div class="modal-body">
-                <input type="text" placeholder="ใส่คำค้นแล้วกด Enter" class="form-control itemsearch" name="itemsearch" >
-                <br>
-                <table class="table table-striped table-hover table-pop">
-                    <thead>
-                    <tr style="background-color: #00b488;color: #FFF;">
-                        <th>รหัส</th>
-                        <th>ชื่อ</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                       <?php if($vendorlist):?>
-                       <?php foreach($vendorlist as $value):?>
-                           <tr ondblclick="getitem($(this));">
-                               <td>
-                                   <input type="hidden" class="recid" name="sup_id" value="<?=$value->id?>">
-                                   <?=$value->vendor_code?>
-                               </td>
-                               <td>
-                                   <?=$value->name?>
-                               </td>
-                           </tr>
-                       <?php endforeach;?>
-                       <?php endif;?>
-                    </tbody>
-                </table>
-                <div class="modal-error" style="display: none;">
-                    <i class="fa fa-exclamation-triangle text-danger"> ไม่พบข้อมูล กรุณาลองใหม่อีกครั้ง</i>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success btn-ok" data-dismiss="modal">ตกลง</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 <?php
 $url_to_del_pic = Url::to(['product/deletepic'],true);
  $js =<<<JS
@@ -368,4 +325,3 @@ JS;
  $this->registerJs($js,static::POS_END);
 
 ?>
-            
