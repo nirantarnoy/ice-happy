@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use \backend\models\AddressBook;
 /**
  * PlantController implements the CRUD actions for Plant model.
  */
@@ -35,13 +36,30 @@ class PlantController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new PlantSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $modelx = Plant::find()->one();
+        $model_address = new AddressBook();
+        if(count($modelx)>0){
+            return $this->redirect(['update','id'=>$modelx->id]);
+        }
+        $model = new Plant();
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['update', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+                'model_address'=> $model_address,
+                'model_address_plant'=>null,
+                //'model_bankaccount' => $model_bankaccount,
+            ]);
+        }
+//        $searchModel = new PlantSearch();
+//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+//
+//        return $this->render('index', [
+//            'searchModel' => $searchModel,
+//            'dataProvider' => $dataProvider,
+//        ]);
     }
 
     /**
@@ -85,13 +103,21 @@ class PlantController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $model_address = new AddressBook();
+        $model_address_plant = AddressBook::find()->where(['party_id'=>$id,'party_type_id'=>1])->one();
+        if ($model->load(Yii::$app->request->post())) {
+            if($model->save()){
+                $session = Yii::$app->session;
+                $session->setFlash('msg','บันทึกรายการเรียบร้อย');
+                return $this->redirect(['update','id'=>$id]);
+            }
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
             'model' => $model,
+            'model_address_plant'=>$model_address_plant,
+            'model_address'=>$model_address,
         ]);
     }
 
