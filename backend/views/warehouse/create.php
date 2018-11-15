@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Warehouse */
 
-$this->title = 'Create Warehouse';
-$this->params['breadcrumbs'][] = ['label' => 'Wharehouses', 'url' => ['index']];
+$this->title = 'สร้างคลังสินค้า';
+$this->params['breadcrumbs'][] = ['label' => 'คลังสินค้า', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="wharehouse-create">

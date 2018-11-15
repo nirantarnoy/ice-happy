@@ -1,16 +1,20 @@
 <?php
-
-/* @var $this \yii\web\View */
-/* @var $content string */
-
-use backend\assets\AppAsset;
+/**
+ * Created by PhpStorm.
+ * User: niran.w
+ * Date: 15/11/2018
+ * Time: 11:58:29
+ */
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use common\widgets\Alert;
+use backend\themes\adminpress\assets\PressAsset;
+use yii\helpers\Url;
 
-AppAsset::register($this);
+
+PressAsset::register($this);
+$directoryAsset = Yii::$app->assetManager->getPublishedUrl('@adminpress/dist');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +28,7 @@ AppAsset::register($this);
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>บริษัทน้ำแข็งแฮปปี้</title>
+    <title>Admin Press Admin Template - The Ultimate Bootstrap 4 Admin Template</title>
     <!-- Bootstrap Core CSS -->
     <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- morris CSS -->
@@ -38,10 +42,10 @@ AppAsset::register($this);
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<![endif]-->
 </head>
 
-<body class="fix-header fix-sidebar card-no-border">
+<body class="fix-header fix-sidebar card-no-border logo-center">
 <!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
 <!-- ============================================================== -->
@@ -66,16 +70,16 @@ AppAsset::register($this);
                     <!-- Logo icon --><b>
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                         <!-- Dark Logo icon -->
-                        <img src="../assets/images/ice-logo.png" style="width: 25%" alt="homepage" class="dark-logo" />
+                        <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                         <!-- Light Logo icon -->
                         <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text --><span>
                          <!-- dark Logo text -->
-<!--                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />-->
+                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
                         <!-- Light Logo text -->
-<!--                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>-->
+                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
             </div>
             <!-- ============================================================== -->
             <!-- End Logo -->
@@ -87,7 +91,6 @@ AppAsset::register($this);
                 <ul class="navbar-nav mr-auto mt-md-0">
                     <!-- This is  -->
                     <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
-                    <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                     <!-- ============================================================== -->
                     <!-- Comment -->
                     <!-- ============================================================== -->
@@ -340,67 +343,45 @@ AppAsset::register($this);
     <aside class="left-sidebar">
         <!-- Sidebar scroll-->
         <div class="scroll-sidebar">
-            <!-- User profile -->
-            <div class="user-profile">
-                <!-- User profile image -->
-                <div class="profile-img"> <img src="../assets/images/users/profile.png" alt="user" />
-                    <!-- this is blinking heartbit-->
-                    <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
-                </div>
-                <!-- User profile text-->
-                <div class="profile-text">
-                    <h5>Markarn Doe</h5>
-                    <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="mdi mdi-settings"></i></a>
-                    <a href="app-email.html" class="" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
-                    <a href="pages-login.html" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
-                    <div class="dropdown-menu animated flipInY">
-                        <!-- text-->
-                        <a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
-                        <!-- text-->
-                        <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
-                        <!-- text-->
-                        <a href="#" class="dropdown-item"><i class="ti-email"></i> Inbox</a>
-                        <!-- text-->
-                        <div class="dropdown-divider"></div>
-                        <!-- text-->
-                        <a href="#" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
-                        <!-- text-->
-                        <div class="dropdown-divider"></div>
-                        <!-- text-->
-                        <a href="login.html" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
-                        <!-- text-->
-                    </div>
-                </div>
-            </div>
-            <!-- End User profile text-->
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
-                    <li class="nav-devider"></li>
                     <li class="nav-small-cap">PERSONAL</li>
-                    <li> <a class="waves-effect waves-dark" href="index.php?r=site/index" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard </span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+<!--                        <ul aria-expanded="false" class="collapse">-->
+<!--                            <li><a href="index.html">Minimalx </a></li>-->
+<!--                            <li><a href="index2.html">Analytical</a></li>-->
+<!--                            <li><a href="index3.html">Demographical</a></li>-->
+<!--                            <li><a href="index4.html">Modern</a></li>-->
+<!--                        </ul>-->
                     </li>
-                    <li> <a class="waves-effect waves-dark" href="index.php?r=plant/index" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">ข้อมูลองค์กร</span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="index.php?r=plant/index" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Company Info</span></a>
 
                     </li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-account-card-details"></i><span class="hide-menu">ข้อมูลผู้ใช้งาน</span></a>
+                    <li class="three-column"> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Users</span></a>
                         <ul aria-expanded="false" class="collapse">
-                            <li><a href="index.php?r=usergroup/index">กลุ่มผู้ใช้</a></li>
-                            <li><a href="index.php?r=user/index">ผู้ใช้งาน</a></li>
-                            <li><a href="app-ticket.html">สิทธิ์การใช้งาน</a></li>
+                            <li><a href="index.php?r=usergroup/index">User group</a></li>
+                            <li><a href="index.php?r=user/index">Users</a></li>
+                            <li><a href="index.php?r=authenitem/index">Permission</a></li>
                         </ul>
                     </li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-cube"></i><span class="hide-menu">สินค้า</span></a>
+                    <li class="two-column"> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-book-open-variant"></i><span class="hide-menu">Products</span></a>
                         <ul aria-expanded="false" class="collapse">
-                            <li><a href="index.php?r=productcat/index">กลุ่มสินค้า</a></li>
-                            <li><a href="index.php?r=product/index">สินค้า</a></li>
-                            <li><a href="index.php?r=unit/index">หน่วยนับ</a></li>
+                            <li><a href="index.php?r=productcat/index">Product Group</a></li>
+                            <li><a href="index.php?r=product/index">Products</a></li>
+                            <li><a href="index.php?r=unit/index">Unit</a></li>
+                            <li><a href="index.php?r=warehouse/index">Warehouse</a></li>
+
                         </ul>
-                    </li><li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-shopping"></i><span class="hide-menu">ข้อมูลขาย</span></a>
+                    </li>
+                    <li class="nav-small-cap">Sales Order</li>
+                    <li class="two-column"> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Sales Order</span></a>
                         <ul aria-expanded="false" class="collapse">
-                            <li><a href="index.php?r=customergroup/index">กลุ่มลูกค้า</a></li>
-                            <li><a href="index.php?r=customer/index">ลูกค้า</a></li>
-                            <li><a href="index.php?r=sale/index">รายการขาย</a></li>
+                            <li><a href="index.php?r=sale/index">Sales Order</a></li>
+                            <li><a href="index.php?r=customergroup/index">Customer Group</a></li>
+                            <li><a href="index.php?r=customer/index">Customer</a></li>
+                            <li><a href="form-material.html">Delivery Group</a></li>
+
                         </ul>
                     </li>
 
@@ -420,53 +401,48 @@ AppAsset::register($this);
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-<!--        <div class="row page-titles">-->
-<!--            <div class="col-md-5 align-self-center">-->
-<!--                <h3 class="text-themecolor">Dashboard</h3>-->
-<!--            </div>-->
-<!--            <div class="col-md-7 align-self-center">-->
+        <?php $this->beginBody()?>
+        <div class="row page-titles">
+            <div class="col-md-5 align-self-center">
+                <h3 class="text-themecolor">Dashboard</h3>
+            </div>
+            <div class="col-md-7 align-self-center">
 <!--                <ol class="breadcrumb">-->
 <!--                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>-->
 <!--                    <li class="breadcrumb-item active">Dashboard</li>-->
 <!--                </ol>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>-->
-<!--            </div>-->
-<!--        </div>-->
-
-        <?php $this->beginBody() ?>
-        <div class="row page-titles">
-            <?php
-            echo Breadcrumbs::widget([
+               <?php echo Breadcrumbs::widget([
+                       'itemTemplate' =>"<ol class='breadcrumb'><li class='breadcrumb-item'>{link}</li></ol>",
                 'options' => ['class'=>'breadcrumb','style'=>'margin-top: -10px;'],
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 
-            ]);
-            ?>
-        </div>
-        <div class="main-content">
-            <div class="container-fluid">
-
-
-                <?= $content ?>
+                ]);?>
+            </div>
+            <div>
+                <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
             </div>
         </div>
-        <?php $this->endBody() ?>
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Container fluid  -->
         <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <?= $content?>
 
+        </div>
+        <?php $this->endBody()?>
         <!-- ============================================================== -->
         <!-- End Container fluid  -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
-        <footer class="footer"> © 2018 Ice Happy </footer>
+        <footer class="footer"> © 2018 Ice happy </footer>
         <!-- ============================================================== -->
         <!-- End footer -->
         <!-- ============================================================== -->
@@ -502,7 +478,7 @@ AppAsset::register($this);
 <script src="../assets/plugins/sparkline/jquery.sparkline.min.js"></script>
 <!--morris JavaScript -->
 <script src="../assets/plugins/raphael/raphael-min.js"></script>
-<script src="assets/plugins/morrisjs/morris.min.js"></script>
+<script src="../assets/plugins/morrisjs/morris.min.js"></script>
 <!-- Chart JS -->
 <script src="js/dashboard1.js"></script>
 <!-- ============================================================== -->
