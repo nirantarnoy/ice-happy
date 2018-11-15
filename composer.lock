@@ -187,7 +187,7 @@
             "version": "3.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e"
             },
             "dist": {
@@ -1355,12 +1355,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpdf/mpdf.git",
-                "reference": "3dfe6ce94d551a81b72cb5ed7231460816007d7d"
+                "reference": "e88c2f0548d33fb8dfa8488a438c9c5b95361786"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpdf/mpdf/zipball/3dfe6ce94d551a81b72cb5ed7231460816007d7d",
-                "reference": "3dfe6ce94d551a81b72cb5ed7231460816007d7d",
+                "url": "https://api.github.com/repos/mpdf/mpdf/zipball/e88c2f0548d33fb8dfa8488a438c9c5b95361786",
+                "reference": "e88c2f0548d33fb8dfa8488a438c9c5b95361786",
                 "shasum": ""
             },
             "require": {
@@ -1415,7 +1415,7 @@
                 "php",
                 "utf-8"
             ],
-            "time": "2018-11-09T08:22:26+00:00"
+            "time": "2018-11-15T10:05:28+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1814,12 +1814,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "6db2fabfcff9950c4dbb65b1136650c32aff0a75"
+                "reference": "acacba6b962bd0f38e450376f736ff42ccf4673b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/6db2fabfcff9950c4dbb65b1136650c32aff0a75",
-                "reference": "6db2fabfcff9950c4dbb65b1136650c32aff0a75",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/acacba6b962bd0f38e450376f736ff42ccf4673b",
+                "reference": "acacba6b962bd0f38e450376f736ff42ccf4673b",
                 "shasum": ""
             },
             "require": {
@@ -1906,7 +1906,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2018-11-05T21:05:49+00:00"
+            "time": "2018-11-14T14:56:03+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -3828,12 +3828,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "2db8714c7706a1076c7d9a9b8b4ad1ca611a8035"
+                "reference": "8a9fbfb330de32cecffbd4ff5733e0a512741e3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/2db8714c7706a1076c7d9a9b8b4ad1ca611a8035",
-                "reference": "2db8714c7706a1076c7d9a9b8b4ad1ca611a8035",
+                "url": "https://api.github.com/repos/symfony/console/zipball/8a9fbfb330de32cecffbd4ff5733e0a512741e3e",
+                "reference": "8a9fbfb330de32cecffbd4ff5733e0a512741e3e",
                 "shasum": ""
             },
             "require": {
@@ -3889,7 +3889,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-11-11T19:48:54+00:00"
+            "time": "2018-11-15T12:14:04+00:00"
         },
         {
             "name": "symfony/css-selector",

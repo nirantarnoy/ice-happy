@@ -11,9 +11,11 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use backend\themes\adminpress\assets\PressAsset;
 use yii\helpers\Url;
+use backend\assets\AppAsset;
 
 
-PressAsset::register($this);
+//PressAsset::register($this);
+AppAsset::register($this);
 $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@adminpress/dist');
 ?>
 <!DOCTYPE html>
@@ -347,7 +349,7 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@adminpress/dist');
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
                     <li class="nav-small-cap">PERSONAL</li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="index.php?r=site/index" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
 <!--                        <ul aria-expanded="false" class="collapse">-->
 <!--                            <li><a href="index.html">Minimalx </a></li>-->
 <!--                            <li><a href="index2.html">Analytical</a></li>-->

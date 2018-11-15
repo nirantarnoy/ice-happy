@@ -37,9 +37,11 @@ class Customer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['code'],'required'],
             [['customer_group_id', 'customer_type_id', 'status', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
             [['code', 'first_name', 'last_name', 'description'], 'string', 'max' => 255],
             [['card_id'], 'string', 'max' => 13],
+            [['lat','long'],'number']
         ];
     }
 
@@ -58,6 +60,8 @@ class Customer extends \yii\db\ActiveRecord
             'customer_type_id' => Yii::t('app', 'Customer Type ID'),
             'description' => Yii::t('app', 'รายละเอียด'),
             'phone' => Yii::t('app', 'โทรศัพท์'),
+            'lat' => Yii::t('app', 'Lat'),
+            'long' => Yii::t('app', 'Long'),
             'status' => Yii::t('app', 'สถานะ'),
             'created_at' => Yii::t('app', 'สร้างเมื่อ'),
             'updated_at' => Yii::t('app', 'แก้ไขเมื่อ'),
